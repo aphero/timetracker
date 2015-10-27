@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 
+  def index
+
+  end
+
   def new
     dev = Developer.find_by_email(params :email)
     if dev && dev.authenticate(params :password)

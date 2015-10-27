@@ -44,6 +44,10 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Get dem footies
+  gem 'rails-footnotes'
+  # Fake all the things
+  gem 'faker'
 end
 
 group :development do

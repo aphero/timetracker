@@ -1,7 +1,8 @@
-<h1>Show Developer</h1>
+<h1>Show Project</h1>
 
-<p><%= @developer.name %></p>
-<p><%= @developer.email %></p>
+<p><%= @project.name %></p>
+<p><%= @project.desc %></p>
+<p><%= @project.max_hours %></p>
 
 <p>Developer's Time Entries</p>
 
@@ -16,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @developer.time_entries.each do |t| %>
+    <% @project.time_entries.each do |t| %>
       <tr>
         <td><%= t.date %></td>
         <td><%= t.duration %></td>

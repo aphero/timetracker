@@ -6,6 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Project.create!(name: "That thing.", desc: "Did you get that thing I sentcha?")
+Developer.create!(name: "Me", email: "me@me.com", password_digest: "password")
 
-Developer.create!(name: "Me", email: "me@me.com", password_digest: "pickles")
+9.times do
+  Developer.create!(name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password_digest: "passsword")
+end
+
+20.times do
+  Project.create!(name: Faker::Lorem.sentence,
+    desc: Faker::Lorem.paragraph,
+    max_hours: rand(1...200))
+end
+
+40.times do
+  TimeEntry.create!(date: Faker::Date.backward,
+    duration: rand(1...15),
+    project_id: rand(1...20),
+    developer_id: rand(1...10))
+end

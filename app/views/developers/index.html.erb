@@ -14,9 +14,9 @@ Developer List
       <tr>
         <td><%= d.name %></td>
         <td><%= d.email %></td>
-        <td><%= link_to 'Show', @developer %></td>
-        <td><%= link_to 'Edit', edit_developer_path, @developer %></td>
-        <td><%= link_to 'Destroy', developer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', d %></td>
+        <td><%= link_to 'Edit', d %></td>
+        <td><%= link_to 'Destroy', @developer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
