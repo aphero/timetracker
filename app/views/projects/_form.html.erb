@@ -1,0 +1,20 @@
+<p><%= notice %></p>
+
+<%= form_for(@project) do |p| %>
+  <div class="field">
+    <%= p.label :name %><br>
+    <%= p.text_field :name %>
+  </div>
+  <div class="field">
+    <%= p.label :desc %><br>
+    <%= p.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= p.label :max_hours %><br>
+    <%= p.number_field :max_hours %>
+  </div>
+
+  <div class="actions">
+    <%= p.submit %>
+  </div>
+<% end %>

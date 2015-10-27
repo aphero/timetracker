@@ -1,4 +1,5 @@
-Developer List
+<h1>Developer List</h1>
+<%= link_to 'New Developer', new_developer_path %>
 
 <table>
   <thead>
@@ -15,8 +16,8 @@ Developer List
         <td><%= d.name %></td>
         <td><%= d.email %></td>
         <td><%= link_to 'Show', d %></td>
-        <td><%= link_to 'Edit', d %></td>
-        <td><%= link_to 'Destroy', @developer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_developer_path(d.id) %></td>
+        <td><%= link_to 'Destroy', developer_path(d.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

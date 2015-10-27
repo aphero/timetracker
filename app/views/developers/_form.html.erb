@@ -1,0 +1,20 @@
+<p><%= notice %></p>
+
+<%= form_for(@developer) do |d| %>
+  <div class="field">
+    <%= d.label :name %><br>
+    <%= d.text_field :name %>
+  </div>
+  <div class="field">
+    <%= d.label :email %><br>
+    <%= d.text_field :email %>
+  </div>
+  <div class="field">
+    <%= d.label :password %><br>
+    <%= d.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= d.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<p><%= notice %></p>
+
+<%= form_for(@time_entry) do |t| %>
+  <div class="field">
+    <%= t.label :date %><br>
+    <%= t.date_field :date %>
+  </div>
+  <div class="field">
+    <%= t.label :duration %><br>
+    <%= t.number_field :duration %>
+  </div>
+  <div class="field">
+    <%= t.label :developer %><br>
+    <%= t.collection_select :developer_id, Developer.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= t.label :project %><br>
+    <%= t.collection_select :project_id, Project.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= t.submit %>
+  </div>
+<% end %>

@@ -1,10 +1,6 @@
 class SessionsController < ApplicationController
 
-  def index
-
-  end
-
-  def new
+  def create
     dev = Developer.find_by_email(params :email)
     if dev && dev.authenticate(params :password)
       session[:login] = true
