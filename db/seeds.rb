@@ -8,4 +8,4 @@
 
 Project.create!(name: "That thing.", desc: "Did you get that thing I sentcha?")
 
-Developer.create!(name: "Me", email: "me@me.com", password: "pickles")
+Developer.create!(name: "Me", email: "me@me.com", password_digest: "pickles")
