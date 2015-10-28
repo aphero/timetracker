@@ -1,19 +1,23 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: :create
+
+  def new
+  end
 
   def create
-    dev = Developer.find_by_email(params :email)
-    if dev && dev.authenticate(params :password)
-      session[:login] = true
-      session[:name] = dev.name
+    dev = Developer.find_by_email(set_params[:email])
+    if dev && dev.authenticate(set_params[:password])
       session[:user_id] = dev.id
-      redirect_to projects_path, notice: "You have been successfully logged in."
+      redirect_to developer_path(dev.id), notice: "You have been successfully logged in."
     else
-      redirect_to login_path 'Invalid email/password combination' # Not quite right!
+      redirect_to login_path 'Invalid email/password combination'
     end
   end
 
   def destroy
-
+    session[:name] = nil
+    session[:user_id] = nil
+    redirect_to login_path, notice: 'Logout successful.'
   end
 
   private

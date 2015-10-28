@@ -50,6 +50,4 @@ class DevelopersController < ApplicationController
     def set_developer
       @developer = Developer.find(params[:id])
     end
-
-
 end

@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Developer.create!(name: "Me", email: "me@me.com", password_digest: "password")
+Developer.create!(name: "Me", email: "me@me.com", password: "password")
 
 9.times do
   Developer.create!(name: Faker::Name.name,
       email: Faker::Internet.email,
-      password_digest: "passsword")
+      password: "passsword")
 end
 
 20.times do
